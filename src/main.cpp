@@ -46,7 +46,7 @@ class $modify(CustomMoreOptionsLayer, MoreOptionsLayer) {
 		#endif
 
 		CCLayer* mainLayer = MoreOptionsLayer::m_mainLayer;
-        CCLayer* settingsLayer = as<CCLayer*>(mainLayer->getChildren()->objectAtIndex(settingsPage));
+        CCLayer* settingsLayer = typeinfo_cast<CCLayer*>(mainLayer->getChildren()->objectAtIndex(settingsPage));
 
 		auto winSize = CCDirector::sharedDirector()->getWinSize();
 		float currentVal = Mod::get()->getSavedValue<float>("bumpscosity", 0);
