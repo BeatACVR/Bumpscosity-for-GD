@@ -58,12 +58,14 @@ class $modify(CustomMoreOptionsLayer, MoreOptionsLayer) {
 		int yOffset = 95;
 		int ySpacing = 22;
 
-		label->setPosition({ center, vCenter - yOffset });
+		int xOffset = 95;
+
+		label->setPosition({ center + xOffset, vCenter - yOffset });
 		label->setScale(0.5f);
 		settingsLayer->addChild(label);
 
 		auto slider = Slider::create(this, menu_selector(CustomMoreOptionsLayer::onBumpscosityChange), 0.8f);
-		slider->setPosition({ center, vCenter - yOffset - ySpacing });
+		slider->setPosition({ center + xOffset, vCenter - yOffset - ySpacing });
 		slider->setValue(clampf(currentVal, 0, 1));
 		settingsLayer->addChild(slider);
 
